@@ -38,6 +38,7 @@
             </Border>
 
         </DockPanel>
-        <local:TextUnit Width="Auto" Height="Auto" Grid.Row="1"/>
+        <local:TextUnit Opacity="0" Width="Auto" Height="Auto" Grid.Row="1"/>
+        <local:FileUnit Opacity="1" Width="Auto" Height="Auto" Grid.Row="1"/>
     </Grid>
 </Window>
