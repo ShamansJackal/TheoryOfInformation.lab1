@@ -68,7 +68,8 @@ namespace TheoryOfInformation.lab1
             if (readFromFile)
             {
                 key = fileUnit.keyBox.Text;
-                string path = fileUnit.InputFile.Content.ToString();
+                string path = fileUnit.InputFile.Text;
+                text = File.ReadAllText(path);
             }
             else
             {
@@ -80,7 +81,8 @@ namespace TheoryOfInformation.lab1
 
             if (readFromFile)
             {
-                
+                string path = fileUnit.OutputFile.Text;
+                File.WriteAllText(path, result);
             }
             else
             {
