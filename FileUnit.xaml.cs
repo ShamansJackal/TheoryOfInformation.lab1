@@ -1,17 +1,16 @@
 ﻿using Microsoft.Win32;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using TheoryOfInformation.lab1.Encryptions.Models;
 
 namespace TheoryOfInformation.lab1
 {
-    /// <summary>
-    /// Логика взаимодействия для FileUnit.xaml
-    /// </summary>
     public partial class FileUnit : UserControl
     {
         public FileUnit()

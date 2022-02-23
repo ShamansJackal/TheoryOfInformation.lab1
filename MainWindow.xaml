@@ -15,30 +15,30 @@
             <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1"  Width="160" DockPanel.Dock="Right" Margin="4">
                 <StackPanel>
                     <Label FontSize="12" Content="Кодировать/Декодировать" Height="26"/>
-                    <RadioButton GroupName="EncryptWay" Content="Шифровать" IsChecked="True" Margin="4,3,0,0" Height="21" />
-                    <RadioButton GroupName="EncryptWay" Content="Расшифровать" Margin="4,0,0,0" Height="21" />
+                    <RadioButton GroupName="EncryptWay" Name="encCheck" Content="Шифровать" Checked="RadioButton_Checked_1" IsChecked="True" Margin="4,3,0,0" Height="21" />
+                    <RadioButton GroupName="EncryptWay" Name="decCheck" Content="Расшифровать" Checked="RadioButton_Checked_1" Margin="4,0,0,0" Height="21" />
                 </StackPanel>
             </Border>
 
             <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1"  Width="120" DockPanel.Dock="Right" Margin="4">
                 <StackPanel>
                     <Label FontSize="12" Content="Вывод:" Height="26"/>
-                    <RadioButton GroupName="Output" Content="В файл" IsChecked="True" Margin="4,3,0,0" Height="21" />
-                    <RadioButton GroupName="Output" Content="В интерфейс" Margin="4,0,0,0" Height="21" />
+                    <RadioButton Checked="RadioButton_Checked" GroupName="Output" Name="inFileCheck" Content="В файл" Margin="4,3,0,0" Height="21" />
+                    <RadioButton GroupName="Output" Checked="RadioButton_Checked" Name="inTextCheck" Content="В интерфейс" Margin="4,0,0,0" Height="21" />
                 </StackPanel>
             </Border>
 
             <Button DockPanel.Dock="Left" Content="Обработать" Margin="4" Padding="4"></Button>
 
             <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1" Margin="4">
-                <StackPanel>
+                <StackPanel> 
                     <Label FontSize="12" Content="Способ шифрования:" Height="26"/>
-                    <ComboBox Margin="4"></ComboBox>
+                    <ComboBox Name="encryptionsBox" ItemsSource="{Binding ecncryptions}" SelectionChanged="encryptionsBox_SelectionChanged" Margin="4"></ComboBox>
                 </StackPanel>
             </Border>
 
         </DockPanel>
-        <local:TextUnit Opacity="0" Width="Auto" Height="Auto" Grid.Row="1"/>
-        <local:FileUnit Opacity="1" Width="Auto" Height="Auto" Grid.Row="1"/>
+        <local:TextUnit x:Name="textUnit" Width="Auto" Height="Auto" Grid.Row="1"/>
+        <local:FileUnit x:Name="fileUnit" Width="Auto" Height="Auto" Grid.Row="1"/>
     </Grid>
 </Window>

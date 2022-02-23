@@ -8,15 +8,15 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <StackPanel>
         <Label DockPanel.Dock="Top" Margin="4" FontSize="16" Content="Выбор файлов:"/>
-        <TextBox DockPanel.Dock="Top" Margin="4" FontSize="16" TextWrapping="NoWrap" AcceptsReturn="False" Text="Ключ"/>
+        <TextBox x:Name="keyBox" DockPanel.Dock="Top" Margin="4" FontSize="16" TextWrapping="NoWrap" AcceptsReturn="False" Text="Ключ"/>
         
         <DockPanel LastChildFill="True">
-            <Button Margin="4" DockPanel.Dock="Right" x:Name="InputFile" Content="Открыть" Click="InputFile_Click" Tag="входной файл"/>
+            <Button Padding="3" Margin="4" DockPanel.Dock="Right" x:Name="InputFile" Content="Открыть" Click="InputFile_Click" Tag="входной файл"/>
             <TextBox Margin="4" FontSize="16" Text="{Binding ElementName=InputFile, Path=Tag}" />
         </DockPanel>
         
         <DockPanel LastChildFill="True">
-            <Button Margin="4" DockPanel.Dock="Right" x:Name="OutputFile" Content="Открыть" Click="InputFile_Click" Tag="выходной файл"/>
+            <Button Padding="3" Margin="4" DockPanel.Dock="Right" x:Name="OutputFile" Content="Открыть" Click="InputFile_Click" Tag="выходной файл"/>
             <TextBox Margin="4" FontSize="16" Text="{Binding ElementName=OutputFile, Path=Tag}" />
         </DockPanel>
     </StackPanel>

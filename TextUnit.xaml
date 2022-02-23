@@ -13,7 +13,7 @@
 
         <DockPanel Grid.Column="0" Margin="4" LastChildFill="True">
             <Label DockPanel.Dock="Top" Margin="4" FontSize="16" Content="Ввод:"/>
-            <TextBox DockPanel.Dock="Top" Margin="4" FontSize="16" TextWrapping="NoWrap" AcceptsReturn="False" Text="Ключ"/>
+            <TextBox x:Name="keyBox" DockPanel.Dock="Top" Margin="4" FontSize="16" TextWrapping="NoWrap" AcceptsReturn="False" Text="Ключ"/>
             <TextBox Margin="4" FontSize="16" Text="Ключ"/>
         </DockPanel>
         <DockPanel Grid.Column="1" Margin="4" LastChildFill="True">
