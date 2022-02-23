@@ -20,7 +20,7 @@ namespace TheoryOfInformation.lab1
 
         public MainWindow()
         {
-            ecncryptions = new List<IEncryption>() { new Casser() };
+            ecncryptions = new List<IEncryption>() { new DecimalMethod(), new RowMethod(), new VijenerProgKey() };
             InitializeComponent();
             encryptionsBox.ItemsSource = ecncryptions;
             inFileCheck.IsChecked = true;
@@ -66,6 +66,7 @@ namespace TheoryOfInformation.lab1
         {
             string text, key;
             Operation operation;
+
             if (readFromFile)
             {
                 key = fileUnit.keyBox.Text;
@@ -81,7 +82,7 @@ namespace TheoryOfInformation.lab1
             if (encode) operation = encryption.Encrypte;
             else operation = encryption.Decrypte;
 
-            string result = WorkWithText(key, text, operation, encryption.Lang);               
+            string result = WorkWithText(key, text, operation, encryption.Lang);
 
             if (readFromFile)
             {

@@ -57,7 +57,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Encryptions\Models\Casser.cs" />
+    <Compile Include="Encryptions\Models\DecimalMethod.cs" />
     <Compile Include="Encryptions\Models\IEncryption.cs" />
+    <Compile Include="Encryptions\Models\RowMethod.cs" />
+    <Compile Include="Encryptions\Models\VijenerProgKey.cs" />
     <Compile Include="Encryptions\TextCleaner.cs" />
     <Compile Include="FileUnit.xaml.cs">
       <DependentUpon>FileUnit.xaml</DependentUpon>
@@ -115,5 +118,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Content Include="Encryptions\Python\Decimal.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Encryptions\Python\RowMethod.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Encryptions\Python\VijenerPorgKey.py">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

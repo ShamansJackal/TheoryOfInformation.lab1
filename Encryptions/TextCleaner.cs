@@ -11,6 +11,7 @@ namespace TheoryOfInformation.lab1.Encryptions
 
         static TextCleaner()
         {
+            langs = new Dictionary<LangIds, string>();
             langs[LangIds.RU] = "абвгдеё";
             langs[LangIds.EN] = "abcdefjhklmnop";
         }
