@@ -3,8 +3,9 @@ using TheoryOfInformation.lab1.Structs;
 
 namespace TheoryOfInformation.lab1.Encryptions.Models
 {
-    class VijenerProgKey : IEncryption
+    public class VijenerProgKey : BasePythonEnryption, IEncryption
     {
+        public VijenerProgKey() : base() { }
         public bool HasKey => true;
 
         public LangIds Lang => LangIds.RU;

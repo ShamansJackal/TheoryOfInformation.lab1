@@ -3,8 +3,9 @@ using TheoryOfInformation.lab1.Structs;
 
 namespace TheoryOfInformation.lab1.Encryptions.Models
 {
-    public class DecimalMethod : IEncryption
+    public class DecimalMethod : BasePythonEnryption, IEncryption
     {
+        public DecimalMethod() : base() { }
         public bool HasKey => true;
 
         public LangIds Lang => LangIds.EN;

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
@@ -67,6 +68,8 @@ namespace TheoryOfInformation.lab1
             string text, key;
             Operation operation;
 
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
             if (readFromFile)
             {
                 key = fileUnit.keyBox.Text;
@@ -83,6 +86,7 @@ namespace TheoryOfInformation.lab1
             else operation = encryption.Decrypte;
 
             string result = WorkWithText(key, text, operation, encryption.Lang);
+            sw.Stop();
 
             if (readFromFile)
             {
@@ -91,7 +95,7 @@ namespace TheoryOfInformation.lab1
             }
             else
             {
-                textUnit.outputText.Text = result;
+                textUnit.outputText.Text = sw.Elapsed.ToString();
             }
         }
     }
