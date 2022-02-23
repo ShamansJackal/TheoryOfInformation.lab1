@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using TheoryOfInformation.lab1.Structs;
 
 namespace TheoryOfInformation.lab1.Encryptions.Models
 {
     internal class Casser : IEncryption
     {
         public bool HasKey => false;
+
+        public LangIds Lang => LangIds.RU;
 
         public string Decrypte(string text, string key)
         {

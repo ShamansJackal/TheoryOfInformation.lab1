@@ -7,16 +7,24 @@ namespace TheoryOfInformation.lab1.Encryptions
 
     public static class TextCleaner
     {
-        public static string WorkWithText(string key, string text, Operation operation)
+        private static readonly Dictionary<LangIds, string> langs;
+
+        static TextCleaner()
         {
-            List<RemovedSymbl> removedSymbls = CleanText(ref text);
+            langs[LangIds.RU] = "абвгдеё";
+            langs[LangIds.EN] = "abcdefjhklmnop";
+        }
+
+        public static string WorkWithText(string key, string text, Operation operation, LangIds lang)
+        {
+            List<RemovedSymbl> removedSymbls = CleanText(ref text, lang);
 
             string encodedTxt = operation(key, text);
 
             return ReturnText(encodedTxt, removedSymbls);
         }
 
-        private static List<RemovedSymbl> CleanText(ref string text)
+        private static List<RemovedSymbl> CleanText(ref string text, LangIds lang)
         {
             return default;
         }

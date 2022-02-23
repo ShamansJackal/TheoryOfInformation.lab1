@@ -62,6 +62,7 @@
     <Compile Include="FileUnit.xaml.cs">
       <DependentUpon>FileUnit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Structs\LangIds.cs" />
     <Compile Include="Structs\RemovedSymbl.cs" />
     <Compile Include="TextUnit.xaml.cs">
       <DependentUpon>TextUnit.xaml</DependentUpon>

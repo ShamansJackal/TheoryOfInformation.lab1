@@ -65,6 +65,7 @@ namespace TheoryOfInformation.lab1
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             string text, key;
+            Operation operation;
             if (readFromFile)
             {
                 key = fileUnit.keyBox.Text;
@@ -77,7 +78,10 @@ namespace TheoryOfInformation.lab1
                 key = textUnit.keyBox.Text;
             }
 
-            string result = encode ? WorkWithText(null, null, encryption.Encrypte) : WorkWithText(null, null, encryption.Decrypte);
+            if (encode) operation = encryption.Encrypte;
+            else operation = encryption.Decrypte;
+
+            string result = WorkWithText(key, text, operation, encryption.Lang);               
 
             if (readFromFile)
             {
