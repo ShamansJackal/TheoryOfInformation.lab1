@@ -14,11 +14,11 @@
         <DockPanel Grid.Column="0" Margin="4" LastChildFill="True">
             <Label DockPanel.Dock="Top" Margin="4" FontSize="16" Content="Ввод:"/>
             <TextBox x:Name="keyBox" DockPanel.Dock="Top" Margin="4" FontSize="16" TextWrapping="NoWrap" AcceptsReturn="False" Text="Ключ"/>
-            <TextBox Margin="4" FontSize="16" Text="Ключ"/>
+            <TextBox x:Name="inputText" Margin="4" FontSize="16" Text="Ключ"/>
         </DockPanel>
         <DockPanel Grid.Column="1" Margin="4" LastChildFill="True">
             <Label DockPanel.Dock="Top" Margin="4" FontSize="16" Content="Вывод:"/>
-            <TextBox Margin="4" FontSize="16" Text="Вывод"/>
+            <TextBox x:Name="outputText" Margin="4" FontSize="16" Text="Вывод"/>
         </DockPanel>
     </Grid>
 </UserControl>

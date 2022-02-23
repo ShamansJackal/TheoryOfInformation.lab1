@@ -28,7 +28,7 @@
                 </StackPanel>
             </Border>
 
-            <Button DockPanel.Dock="Left" Content="Обработать" Margin="4" Padding="4"></Button>
+            <Button DockPanel.Dock="Left" Content="Обработать" Click="Button_Click" Margin="4" Padding="4"></Button>
 
             <Border Background="GhostWhite" BorderBrush="Gainsboro" BorderThickness="1" Margin="4">
                 <StackPanel> 

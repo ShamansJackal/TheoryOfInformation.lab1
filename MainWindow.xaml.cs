@@ -1,19 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using TheoryOfInformation.lab1.Encryptions;
 using TheoryOfInformation.lab1.Encryptions.Models;
+using static TheoryOfInformation.lab1.Encryptions.TextCleaner;
 
 namespace TheoryOfInformation.lab1
 {
@@ -25,6 +16,7 @@ namespace TheoryOfInformation.lab1
         private bool readFromFile;
         private bool encode;
         private IEnumerable<IEncryption> ecncryptions;
+        private IEncryption encryption;
 
         public MainWindow()
         {
@@ -66,6 +58,33 @@ namespace TheoryOfInformation.lab1
             {
                 fileUnit.keyBox.Visibility = Visibility.Hidden;
                 textUnit.keyBox.Visibility = Visibility.Hidden;
+            }
+            encryption = selected;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            string text, key;
+            if (readFromFile)
+            {
+                key = fileUnit.keyBox.Text;
+                string path = fileUnit.InputFile.Content.ToString();
+            }
+            else
+            {
+                text = textUnit.inputText.Text;
+                key = textUnit.keyBox.Text;
+            }
+
+            string result = encode ? WorkWithText(null, null, encryption.Encrypte) : WorkWithText(null, null, encryption.Decrypte);
+
+            if (readFromFile)
+            {
+                
+            }
+            else
+            {
+                textUnit.outputText.Text = result;
             }
         }
     }

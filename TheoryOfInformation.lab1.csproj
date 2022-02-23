@@ -58,9 +58,11 @@
     </ApplicationDefinition>
     <Compile Include="Encryptions\Models\Casser.cs" />
     <Compile Include="Encryptions\Models\IEncryption.cs" />
+    <Compile Include="Encryptions\TextCleaner.cs" />
     <Compile Include="FileUnit.xaml.cs">
       <DependentUpon>FileUnit.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Structs\RemovedSymbl.cs" />
     <Compile Include="TextUnit.xaml.cs">
       <DependentUpon>TextUnit.xaml</DependentUpon>
     </Compile>
@@ -111,8 +113,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Structs\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
