@@ -10,5 +10,10 @@
             index = ind;
             symble = str[ind];
         }
+
+        public override string ToString()
+        {
+            return $"{index}:{symble}";
+        }
     }
 }
