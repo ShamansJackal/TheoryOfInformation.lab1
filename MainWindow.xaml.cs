@@ -87,12 +87,26 @@ namespace TheoryOfInformation.lab1
 
             if (readFromFile)
             {
-                string path = fileUnit.OutputFile.Text;
-                File.WriteAllText(path, result);
+                if (!string.IsNullOrWhiteSpace(result))
+                {
+                    string path = fileUnit.OutputFile.Text;
+                    File.WriteAllText(path, result);
+                }
+                else
+                {
+                    fileUnit.OutputFile.Text = "Не валидный ключ";
+                }
             }
             else
             {
-                textUnit.outputText.Text = result;
+                if (!string.IsNullOrWhiteSpace(result))
+                {
+                    textUnit.outputText.Text = result;
+                }
+                else
+                {
+                    textUnit.outputText.Text = "Не валидный ключ";
+                }
             }
         }
     }
