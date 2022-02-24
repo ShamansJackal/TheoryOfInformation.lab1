@@ -24,7 +24,8 @@ namespace TheoryOfInformation.lab1
             ecncryptions = new List<IEncryption>() { new DecimalMethod(), new RowMethod(), new VijenerProgKey() };
             InitializeComponent();
             encryptionsBox.ItemsSource = ecncryptions;
-            inFileCheck.IsChecked = true;
+            encryptionsBox.SelectedIndex = 1;
+            inTextCheck.IsChecked = true;
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
@@ -68,8 +69,6 @@ namespace TheoryOfInformation.lab1
             string text, key;
             Operation operation;
 
-            Stopwatch sw = new Stopwatch();
-            sw.Start();
             if (readFromFile)
             {
                 key = fileUnit.keyBox.Text;
@@ -86,7 +85,6 @@ namespace TheoryOfInformation.lab1
             else operation = encryption.Decrypte;
 
             string result = WorkWithText(key, text, operation, encryption.Lang);
-            sw.Stop();
 
             if (readFromFile)
             {
@@ -95,7 +93,7 @@ namespace TheoryOfInformation.lab1
             }
             else
             {
-                textUnit.outputText.Text = sw.Elapsed.ToString();
+                textUnit.outputText.Text = result;
             }
         }
     }
