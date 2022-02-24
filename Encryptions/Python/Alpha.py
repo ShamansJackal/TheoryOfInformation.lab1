@@ -1,0 +1,1 @@
+﻿Langs = {"RU":list("абвгдеёжзийлмнопрстуфхцчшщъыьэюя"),"EN":list("abcdefghijklmnopqrstuvwxyz")}

@@ -1,2 +1,4 @@
-﻿def Encrypte(text, key):
-    return text
+﻿from Alpha import Langs
+
+def Encrypte(text, key, lang):
+    return Langs[lang][2]
