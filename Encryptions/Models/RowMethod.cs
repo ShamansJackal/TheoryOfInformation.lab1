@@ -24,7 +24,7 @@ namespace TheoryOfInformation.lab1.Encryptions.Models
             engine.ExecuteFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Encryptions", "Python", "RowMethod.py"), scope);
             Operation encrypte = scope.GetVariable<Operation>("Encrypte");
 
-            return encrypte(key, text);
+            return encrypte(text, key);
         }
 
         public override string ToString() => "Cтолбцовый метод";

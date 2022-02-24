@@ -1,2 +1,2 @@
-﻿def Encrypte(key, text):
+﻿def Encrypte(text, key):
     return text
