@@ -5,8 +5,6 @@ namespace TheoryOfInformation.lab1.Encryptions.Models
 {
     internal class Casser : IEncryption
     {
-        public bool HasKey => false;
-
         public LangIds Lang => LangIds.RU;
 
         public string Decrypte(string text, string key)
