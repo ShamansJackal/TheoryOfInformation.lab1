@@ -11,11 +11,12 @@ namespace TheoryOfInformation.lab1.Encryptions.Models
     {
         protected ScriptEngine engine;
         protected ScriptScope scope;
+        protected string basePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Encryptions", "Python");
         public BasePythonEnryption()
         {
             engine = Python.CreateEngine();
             ICollection<string> paths = engine.GetSearchPaths();
-            paths.Add(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Encryptions", "Python"));
+            paths.Add(basePath);
             engine.SetSearchPaths(paths);
 
             scope = engine.CreateScope();

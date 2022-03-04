@@ -1,1 +1,1 @@
-﻿Langs = {"RU":list("абвгдеёжзийлмнопрстуфхцчшщъыьэюя"),"EN":list("abcdefghijklmnopqrstuvwxyz")}
+﻿Langs = {"RU":"абвгдеёжзийклмнопрстуфхцчшщъыьэюя","EN":"abcdefghijklmnopqrstuvwxyz"}

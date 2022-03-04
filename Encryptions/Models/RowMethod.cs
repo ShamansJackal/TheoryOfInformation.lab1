@@ -10,8 +10,6 @@ namespace TheoryOfInformation.lab1.Encryptions.Models
 {
     public class RowMethod : BasePythonEnryption, IEncryption
     {
-        public RowMethod() : base() { }
-        public bool HasKey => true;
         public LangIds Lang => LangIds.EN;
 
         public string Decrypte(string text, string key)

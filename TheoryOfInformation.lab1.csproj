@@ -78,7 +78,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Encryptions\Models\BasePythonEnryption.cs" />
-    <Compile Include="Encryptions\Models\Casser.cs" />
     <Compile Include="Encryptions\Models\DecimalMethod.cs" />
     <Compile Include="Encryptions\Models\IEncryption.cs" />
     <Compile Include="Encryptions\Models\RowMethod.cs" />
