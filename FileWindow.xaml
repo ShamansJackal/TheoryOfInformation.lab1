@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="TheoryOfInformation.lab1.FileUnit"
+﻿<UserControl x:Class="TheoryOfInformation.lab1.FileWindow"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -6,18 +6,10 @@
              xmlns:local="clr-namespace:TheoryOfInformation.lab1"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
-        <Label DockPanel.Dock="Top" Margin="4" FontSize="16" Content="Выбор файлов:"/>
-        <TextBox x:Name="keyBox" DockPanel.Dock="Top" Margin="4" FontSize="16" TextWrapping="NoWrap" AcceptsReturn="False" Text="Ключ"/>
-        
-        <DockPanel LastChildFill="True">
-            <Button Padding="3" Margin="4" DockPanel.Dock="Right" Content="Открыть" Click="InputFile_Click" Tag="входной файл"/>
-            <TextBox Margin="4" x:Name="InputFile" FontSize="16" Text="{Binding ElementName=InputFile, Path=Tag}" />
-        </DockPanel>
-        
-        <DockPanel LastChildFill="True">
+    <Grid>
+        <DockPanel VerticalAlignment="Top" LastChildFill="True">
             <Button Padding="3" Margin="4" DockPanel.Dock="Right"  Content="Открыть" Click="InputFile_Click" Tag="выходной файл"/>
             <TextBox Margin="4" x:Name="OutputFile" FontSize="16" Text="{Binding ElementName=OutputFile, Path=Tag}" />
         </DockPanel>
-    </StackPanel>
+    </Grid>
 </UserControl>

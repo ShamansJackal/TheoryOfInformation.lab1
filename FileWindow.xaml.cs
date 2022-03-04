@@ -11,9 +11,12 @@ using TheoryOfInformation.lab1.Encryptions.Models;
 
 namespace TheoryOfInformation.lab1
 {
-    public partial class FileUnit : UserControl
+    /// <summary>
+    /// Логика взаимодействия для FileWindow.xaml
+    /// </summary>
+    public partial class FileWindow : UserControl
     {
-        public FileUnit()
+        public FileWindow()
         {
             InitializeComponent();
         }

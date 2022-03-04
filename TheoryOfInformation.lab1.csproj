@@ -84,15 +84,15 @@
     <Compile Include="Encryptions\Models\RowMethod.cs" />
     <Compile Include="Encryptions\Models\VijenerProgKey.cs" />
     <Compile Include="Encryptions\TextCleaner.cs" />
-    <Compile Include="FileUnit.xaml.cs">
-      <DependentUpon>FileUnit.xaml</DependentUpon>
+    <Compile Include="FileWindow.xaml.cs">
+      <DependentUpon>FileWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Structs\LangIds.cs" />
     <Compile Include="Structs\RemovedSymbl.cs" />
-    <Compile Include="TextUnit.xaml.cs">
-      <DependentUpon>TextUnit.xaml</DependentUpon>
+    <Compile Include="TextWindow.xaml.cs">
+      <DependentUpon>TextWindow.xaml</DependentUpon>
     </Compile>
-    <Page Include="FileUnit.xaml">
+    <Page Include="FileWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -108,7 +108,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="TextUnit.xaml">
+    <Page Include="TextWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

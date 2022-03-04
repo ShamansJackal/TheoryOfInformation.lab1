@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace TheoryOfInformation.lab1
 {
     /// <summary>
-    /// Логика взаимодействия для TextUnit.xaml
+    /// Логика взаимодействия для TextWindow.xaml
     /// </summary>
-    public partial class TextUnit : UserControl
+    public partial class TextWindow : UserControl
     {
-        public TextUnit()
+        public TextWindow()
         {
             InitializeComponent();
         }
