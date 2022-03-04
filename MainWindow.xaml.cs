@@ -14,6 +14,7 @@ namespace TheoryOfInformation.lab1
     public partial class MainWindow : Window
     {
         private bool readFromFile;
+        private bool writeToFile;
         private bool encode;
         private IEnumerable<IEncryption> ecncryptions;
         private IEncryption encryption;
@@ -24,21 +25,38 @@ namespace TheoryOfInformation.lab1
             InitializeComponent();
             encryptionsBox.ItemsSource = ecncryptions;
             encryptionsBox.SelectedIndex = 1;
-            inTextCheck.IsChecked = true;
+            inTextCheck_ib.IsChecked = true;
+            inTextCheck_out.IsChecked = true;
         }
 
-        private void RadioButton_Checked(object sender, RoutedEventArgs e)
+        private void outFileCheck_Checked(object sender, RoutedEventArgs e)
         {
-            if (inFileCheck.IsChecked.Value)
+            if (inFileCheck_out.IsChecked.Value)
             {
-                fileUnit.Visibility = Visibility.Visible;
-                textUnit.Visibility = Visibility.Hidden;
+                fileUnit_out.Visibility = Visibility.Visible;
+                textUnit_out.Visibility = Visibility.Hidden;
+                writeToFile = true;
+            }
+            else
+            {
+                fileUnit_out.Visibility = Visibility.Hidden;
+                textUnit_out.Visibility = Visibility.Visible;
+                writeToFile = false;
+            }
+        }
+
+        private void inFileCheck_Checked(object sender, RoutedEventArgs e)
+        {
+            if (inFileCheck_in.IsChecked.Value)
+            {
+                fileUnit_in.Visibility = Visibility.Visible;
+                textUnit_in.Visibility = Visibility.Hidden;
                 readFromFile = true;
             }
             else
             {
-                fileUnit.Visibility = Visibility.Hidden;
-                textUnit.Visibility = Visibility.Visible;
+                fileUnit_in.Visibility = Visibility.Hidden;
+                textUnit_in.Visibility = Visibility.Visible;
                 readFromFile = false;
             }
         }
@@ -50,63 +68,40 @@ namespace TheoryOfInformation.lab1
             ComboBox cmb = sender as ComboBox;
 
             IEncryption selected = cmb.SelectedItem as IEncryption;
-            if (selected.HasKey)
-            {
-                fileUnit.keyBox.Visibility = Visibility.Visible;
-                textUnit.keyBox.Visibility = Visibility.Visible;
-            }
-            else
-            {
-                fileUnit.keyBox.Visibility = Visibility.Hidden;
-                textUnit.keyBox.Visibility = Visibility.Hidden;
-            }
             encryption = selected;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            string text, key;
+            string text;
             Operation operation;
+
+            string key = keyBox.Text;
 
             if (readFromFile)
             {
-                key = fileUnit.keyBox.Text;
-                string path = fileUnit.InputFile.Text;
+                string path = fileUnit_in.OutputFile.Text;
                 text = File.ReadAllText(path);
             }
             else
             {
-                text = textUnit.inputText.Text;
-                key = textUnit.keyBox.Text;
+                text = textUnit_in.outputText.Text;
             }
 
             if (encode) operation = encryption.Encrypte;
             else operation = encryption.Decrypte;
 
             string result = WorkWithText(key, text, operation, encryption.Lang);
+            result = string.IsNullOrWhiteSpace(result) ? "Не валидный ключ" : result;
 
-            if (readFromFile)
+            if (writeToFile)
             {
-                if (!string.IsNullOrWhiteSpace(result))
-                {
-                    string path = fileUnit.OutputFile.Text;
-                    File.WriteAllText(path, result);
-                }
-                else
-                {
-                    fileUnit.OutputFile.Text = "Не валидный ключ";
-                }
+                string path = fileUnit_out.OutputFile.Text;
+                File.WriteAllText(path, result);
             }
             else
             {
-                if (!string.IsNullOrWhiteSpace(result))
-                {
-                    textUnit.outputText.Text = result;
-                }
-                else
-                {
-                    textUnit.outputText.Text = "Не валидный ключ";
-                }
+                textUnit_out.outputText.Text = result;
             }
         }
     }
