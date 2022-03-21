@@ -7,5 +7,6 @@ namespace TheoryOfInformation.lab1.Encryptions.Models
         string Encrypte(string text, string key);
         string Decrypte(string text, string key);
         LangIds Lang { get; }
+        LangIds KeyLang { get; }
     }
 }
