@@ -3,6 +3,7 @@
     public enum LangIds
     {
         RU,
-        EN
+        EN,
+        NU
     }
 }
