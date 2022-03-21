@@ -7,6 +7,7 @@ namespace TheoryOfInformation.lab1.Encryptions.Models
     public class DecimalMethod : BasePythonEnryption, IEncryption
     {
         public LangIds Lang => LangIds.EN;
+        public LangIds KeyLang => LangIds.NU;
 
         public string Decrypte(string text, string key)
         {

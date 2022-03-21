@@ -10,7 +10,6 @@ def Encrypte(text, key, lang):
         id = "".join(lang).index(i)
         id = id*key % len(lang)
         result += lang[id]
-    print(result)
     return result
     
 def Decrypte(text, key, lang):
@@ -49,5 +48,3 @@ def IsPrimary(a, b):
         else:
             b = b % a
     return a+b==1
-    
-print(Decrypte(Encrypte("текст", 2, "RU"),2,"RU"))

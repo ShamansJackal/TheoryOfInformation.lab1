@@ -11,10 +11,14 @@ namespace TheoryOfInformation.lab1.Encryptions.Models
     public class RowMethod : BasePythonEnryption, IEncryption
     {
         public LangIds Lang => LangIds.EN;
+        public LangIds KeyLang => LangIds.EN;
 
         public string Decrypte(string text, string key)
         {
-            throw new NotImplementedException();
+            engine.ExecuteFile(Path.Combine(basePath, "RowMethod.py"), scope);
+            PythonOperation decrypte = scope.GetVariable<PythonOperation>("Decrypte");
+
+            return decrypte(text, key, Enum.GetName(typeof(LangIds), Lang));
         }
 
         public string Encrypte(string text, string key)

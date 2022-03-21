@@ -24,13 +24,15 @@ def Encrypte(text, key, lang):
     col_num = i//len(key)+2
     table[col_num][i%len(key)]=symb
   for i in range(1,len(key)+1):
-    tmp="".join(map(lambda x: str(x), table[1]))
-    pos=tmp.find(str(i))
+    pos = 0
+    for j, hui in enumerate(table[1]):
+        if(hui==i):
+            pos = j
     for lst in table[2:]:
       if(lst[pos]):
         result+=lst[pos]
 
-  return result	
+  return result  
     
 def Decrypte(text, key, lang):
   lang = Langs[lang]
@@ -52,14 +54,16 @@ def Decrypte(text, key, lang):
       pos = key.find(i, beg)
 
   k = len(text)%len(key)-1    
-  pos = 0
+  pos_text = 0
 
   for i in range(1, len(key)+1):
-    tmp="".join(map(lambda x: str(x), table[1]))
-    tmp=tmp.find(str(i))
-    for j in range(2,t_size-max(min(tmp-k, 1), 0)):
-      table[j][tmp]=text[pos]
-      pos+=1
+    pos = 0
+    for j,hui in enumerate(table[1]):
+        if(hui==i):
+          pos = j
+    for j in range(2,t_size-max(min(pos-k, 1), 0)):
+      table[j][pos]=text[pos_text]
+      pos_text+=1
 
   for i in table[2:]:
     for j in i:
