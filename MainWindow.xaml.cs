@@ -21,7 +21,7 @@ namespace TheoryOfInformation.lab1
 
         public MainWindow()
         {
-            ecncryptions = new List<IEncryption>() { new Casser() };
+            ecncryptions = new List<IEncryption>() { };
             InitializeComponent();
             encryptionsBox.ItemsSource = ecncryptions;
             encryptionsBox.SelectedIndex = 1;

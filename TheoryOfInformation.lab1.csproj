@@ -56,7 +56,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Encryptions\Models\Casser.cs" />
     <Compile Include="Encryptions\Models\IEncryption.cs" />
     <Compile Include="Encryptions\TextCleaner.cs" />
     <Compile Include="FileWindow.xaml.cs">
