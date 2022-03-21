@@ -92,8 +92,10 @@ namespace TheoryOfInformation.lab1
             if (encode) operation = encryption.Encrypte;
             else operation = encryption.Decrypte;
 
+            CleanText(ref key, encryption.KeyLang);
+
             string result = WorkWithText(key, text, operation, encryption.Lang);
-            result = string.IsNullOrWhiteSpace(result) ? "Не валидный ключ" : result;
+            result = string.IsNullOrWhiteSpace(result) ? "Не валидные данные" : result;
 
             if (writeToFile)
             {
